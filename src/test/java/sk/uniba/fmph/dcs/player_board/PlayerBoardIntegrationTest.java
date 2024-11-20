@@ -13,14 +13,12 @@ public class PlayerBoardIntegrationTest {
     public void simulateActions() {
 
         class PlayerBoardFactory {
-            public Map.Entry<PlayerBoard, PlayerBoardGameBoardFacade> createPlayerBoard() {
+            public static Map.Entry<PlayerBoard, PlayerBoardGameBoardFacade> createPlayerBoard() {
                 PlayerBoard board = new PlayerBoard();
                 return Map.entry(board, new PlayerBoardGameBoardFacade(board));
             }
         }
-
-        PlayerBoardFactory factory = new PlayerBoardFactory();
-        Map.Entry<PlayerBoard, PlayerBoardGameBoardFacade> tmp = factory.createPlayerBoard();
+        Map.Entry<PlayerBoard, PlayerBoardGameBoardFacade> tmp = PlayerBoardFactory.createPlayerBoard();
 
         PlayerBoard pb = tmp.getKey();
         PlayerBoardGameBoardFacade pbf = tmp.getValue();
@@ -75,6 +73,6 @@ public class PlayerBoardIntegrationTest {
         assert points == -10;
         pb.addEndOfGamePoints();
         points = pb.addPoints(0);
-//        assert points == (-10 + 4);
+        assert points == (-10 + 4);
     }
 }
