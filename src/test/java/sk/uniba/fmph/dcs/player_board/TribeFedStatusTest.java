@@ -25,7 +25,7 @@ public class TribeFedStatusTest {
 
     @Test
     public void testNewTurn() {
-        PlayerResourcesAndFood prf = new PlayerResourcesAndFood();
+        PlayerResourcesAndFood prf = new PlayerResourcesAndFood(0);
         TribeFedStatus tfs = new TribeFedStatus(prf, new PlayerFigures());
         for (int i = 0; i < 10; i++) {
             tfs.newTurn();
@@ -63,7 +63,7 @@ public class TribeFedStatusTest {
 
     @Test
     public void testFeedTribeIfEnoughFood() {
-        PlayerResourcesAndFood prf = new PlayerResourcesAndFood();
+        PlayerResourcesAndFood prf = new PlayerResourcesAndFood(0);
         PlayerFigures figures = new PlayerFigures();
         TribeFedStatus tfs = new TribeFedStatus(prf, figures);
 
@@ -90,7 +90,7 @@ public class TribeFedStatusTest {
 
     @Test
     public void testFeedTribe() {
-        PlayerResourcesAndFood resources = new PlayerResourcesAndFood();
+        PlayerResourcesAndFood resources = new PlayerResourcesAndFood(0);
         PlayerFigures figures = new PlayerFigures();
         TribeFedStatus tfs = new TribeFedStatus(resources, figures);
         figures.addNewFigure();
@@ -131,7 +131,7 @@ public class TribeFedStatusTest {
 
     @Test
     public void testSetTribeFed() {
-        PlayerResourcesAndFood resourcesAndFood = new PlayerResourcesAndFood();
+        PlayerResourcesAndFood resourcesAndFood = new PlayerResourcesAndFood(0);
         PlayerFigures figures = new PlayerFigures();
         TribeFedStatus tfs = new TribeFedStatus(resourcesAndFood, figures);
         resourcesAndFood.takeResources(new Effect[] {});
@@ -175,7 +175,7 @@ public class TribeFedStatusTest {
     @Test
     public void testIsTribeFed() {
         PlayerFigures figures = new PlayerFigures();
-        PlayerResourcesAndFood resourcesAndFood = new PlayerResourcesAndFood();
+        PlayerResourcesAndFood resourcesAndFood = new PlayerResourcesAndFood(0);
         TribeFedStatus tfs = new TribeFedStatus(resourcesAndFood, figures);
         resourcesAndFood.giveResources(new Effect[] { Effect.FOOD, Effect.FOOD, Effect.FOOD, Effect.FOOD, Effect.FOOD,
                 Effect.GOLD, Effect.GOLD, Effect.STONE, Effect.CLAY, Effect.WOOD });

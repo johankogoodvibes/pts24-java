@@ -7,7 +7,10 @@ import sk.uniba.fmph.dcs.stone_age.EndOfGameEffect;
 public class PlayerBoardTest {
     @Test
     public void newTurnTest() {
-        PlayerBoard pb = new PlayerBoard();
+        PlayerResourcesAndFood prf = new PlayerResourcesAndFood(0);
+        PlayerFigures pf = new PlayerFigures();
+        TribeFedStatus tfs = new TribeFedStatus(prf, pf);
+        PlayerBoard pb = new PlayerBoard(new PlayerCivilisationCards(), pf, prf, new PlayerTools(), tfs);
         pb.getPlayerFigures().addNewFigure();
         pb.getTribeFedStatus().addField();
         pb.getPlayerTools().addTool();

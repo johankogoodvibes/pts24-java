@@ -8,16 +8,30 @@ import java.util.Map;
 import static java.lang.Math.max;
 
 public class PlayerResourcesAndFood {
+    private static final int DEFAULT_INITIAL_FOOD_AMOUNT = 12;
     private final Map<Effect, Integer> resources;
 
     /**
-     * Initialise resources such that every resource is zero.
+     * Initialise resources with adjustable initialFoodAmount and every other resource set to zero.
+     *
+     * @param initialFoodAmount
+     *            the initial amount of food
      */
-    public PlayerResourcesAndFood() {
+    public PlayerResourcesAndFood(final int initialFoodAmount) {
         resources = new HashMap<>();
         for (Effect res : Effect.values()) {
             resources.put(res, 0);
         }
+        if (initialFoodAmount > 0) {
+            resources.put(Effect.FOOD, initialFoodAmount);
+        }
+    }
+
+    /**
+     * Initialise resources such that there are 12 foodstuffs and every other resource is zero (by default).
+     */
+    public PlayerResourcesAndFood() {
+        this(DEFAULT_INITIAL_FOOD_AMOUNT);
     }
 
     /**
