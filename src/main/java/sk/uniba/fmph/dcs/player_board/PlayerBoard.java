@@ -12,6 +12,19 @@ public class PlayerBoard implements InterfaceGetState {
     private final TribeFedStatus tribeFedStatus;
     private boolean endOfGamePointsAdded;
 
+    public PlayerBoard(final PlayerCivilisationCards pcc, final PlayerFigures pf, final PlayerResourcesAndFood prf,
+            final PlayerTools pt, final TribeFedStatus tfs) {
+        this.playerCivilisationCards = pcc;
+        this.playerFigures = pf;
+        this.playerResourcesAndFood = prf;
+        this.playerTools = pt;
+        this.tribeFedStatus = tfs;
+
+        this.points = 0;
+        this.houses = 0;
+        this.endOfGamePointsAdded = false;
+    }
+
     public PlayerBoard() {
         this.playerResourcesAndFood = new PlayerResourcesAndFood();
         this.playerFigures = new PlayerFigures();
