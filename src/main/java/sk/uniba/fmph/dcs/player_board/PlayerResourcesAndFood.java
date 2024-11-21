@@ -8,7 +8,7 @@ import java.util.Map;
 import static java.lang.Math.max;
 
 public class PlayerResourcesAndFood {
-    private static final int DEFAULT_INITIAL_FOOD_AMOUNT = 12;
+    public static final int DEFAULT_INITIAL_FOOD_AMOUNT = 12;
     private final Map<Effect, Integer> resources;
 
     /**
