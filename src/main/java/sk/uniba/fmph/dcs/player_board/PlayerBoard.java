@@ -10,6 +10,7 @@ public class PlayerBoard implements InterfaceGetState {
     private final PlayerTools playerTools;
     private final PlayerCivilisationCards playerCivilisationCards;
     private final TribeFedStatus tribeFedStatus;
+
     private boolean endOfGamePointsAdded;
 
     public PlayerBoard(final PlayerCivilisationCards pcc, final PlayerFigures pf, final PlayerResourcesAndFood prf,
@@ -34,6 +35,7 @@ public class PlayerBoard implements InterfaceGetState {
 
         this.points = 0;
         this.houses = 0;
+
         this.endOfGamePointsAdded = false;
     }
 

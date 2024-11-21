@@ -17,4 +17,5 @@ public interface InterfaceFigureLocationInternal {
 
     boolean newTurn(); // Returns true if the end of the game is implied by the given location
 
+    String state();
 }

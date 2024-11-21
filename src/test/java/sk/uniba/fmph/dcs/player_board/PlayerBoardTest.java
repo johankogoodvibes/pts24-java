@@ -67,6 +67,7 @@ public class PlayerBoardTest {
             pb.getTribeFedStatus().addField();
             pb.newTurn();
         } // 4 fields
+      
         pb.addHouse();
         pb.addHouse(); // 2 houses
         pb.getPlayerResourcesAndFood()

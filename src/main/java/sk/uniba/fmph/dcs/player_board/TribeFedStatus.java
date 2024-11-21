@@ -104,9 +104,9 @@ public class TribeFedStatus {
      * Attempts to feed the tribe with the specified resources.
      *
      * @param resources
-     *            resources
+     *            the resources to use for feeding the tribe
      *
-     * @return true if tribe was successfully fed.
+     * @return true if the tribe was successfully fed
      */
     public boolean feedTribe(final Effect[] resources) {
         this.harvestFields();
