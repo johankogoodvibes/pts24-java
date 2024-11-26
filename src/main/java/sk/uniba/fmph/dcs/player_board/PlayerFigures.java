@@ -5,7 +5,7 @@ public class PlayerFigures {
     private int figures;
     private boolean canAddFigure;
 
-    private static final int DEFAULT_STARTING_FIGURES = 5;
+    public static final int DEFAULT_STARTING_FIGURES = 5;
     private final int startingFigures;
     private final int maxFigurines = 10;
 
