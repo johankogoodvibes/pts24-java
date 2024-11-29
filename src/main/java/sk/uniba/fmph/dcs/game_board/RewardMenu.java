@@ -15,16 +15,10 @@ public class RewardMenu implements InterfaceTakeReward {
     private List<PlayerOrder> playersLeft;
 
     /**
-     * creates class.
-     *
-     * @param menu
-     *            resources availible to take
-     * @param players
-     *            list of all players
+     * @param players list of all players
      */
-    public RewardMenu(final List<Effect> menu, final List<Player> players) {
+    public RewardMenu(final List<Player> players) {
         this.menu = new ArrayList<>();
-        this.menu.addAll(menu);
         this.players = new ArrayList<>();
         this.players.addAll(players);
         playersLeft = players.stream().map(Player::playerOrder).collect(Collectors.toList());
@@ -42,8 +36,7 @@ public class RewardMenu implements InterfaceTakeReward {
     /**
      * don't really know why is this, I guess so that I can restart menu.
      *
-     * @param menu
-     *            new menu that replaces the old one
+     * @param menu new menu that replaces the old one
      */
     public void initiate(final List<Effect> menu) {
         menu.clear();
@@ -71,11 +64,8 @@ public class RewardMenu implements InterfaceTakeReward {
     /**
      * removes reward from menu and gives it to player.
      *
-     * @param player
-     *            gives reward to player with this order
-     * @param reward
-     *            reward from menu
-     *
+     * @param player gives reward to player with this order
+     * @param reward reward from menu
      * @return `true` if found player with order `player` and reward is in menu, `false` otherwise
      */
     @Override
@@ -92,16 +82,14 @@ public class RewardMenu implements InterfaceTakeReward {
         }
         playersLeft.remove(player);
         menu.remove(reward);
-        p.playerBoard().giveEffect(new Effect[] {reward});
+        p.playerBoard().giveEffect(new Effect[]{reward});
         return true;
     }
 
     /**
      * don't really know either.
      *
-     * @param player
-     *            can this player take something
-     *
+     * @param player can this player take something
      * @return NO_ACTION_POSSIBLE when either player is not allowed to choose or menu is empty
      */
     @Override

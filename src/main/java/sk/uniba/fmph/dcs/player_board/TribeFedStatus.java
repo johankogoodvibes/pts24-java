@@ -18,10 +18,8 @@ public class TribeFedStatus {
     /**
      * Constructs a new TribeFedStatus with the specified player resources and figures.
      *
-     * @param playerResourcesAndFood
-     *            the player's resources and food
-     * @param playerFigures
-     *            the player's figures
+     * @param playerResourcesAndFood the player's resources and food
+     * @param playerFigures          the player's figures
      */
     public TribeFedStatus(final PlayerResourcesAndFood playerResourcesAndFood, final PlayerFigures playerFigures) {
         this.tribeFed = false;
@@ -51,7 +49,7 @@ public class TribeFedStatus {
         }
 
         this.fields++;
-        playerResourcesAndFood.giveResources(new Effect[] {Effect.FIELD});
+        playerResourcesAndFood.giveResources(new Effect[]{Effect.FIELD});
     }
 
     /**
@@ -103,9 +101,7 @@ public class TribeFedStatus {
     /**
      * Attempts to feed the tribe with the specified resources.
      *
-     * @param resources
-     *            the resources to use for feeding the tribe
-     *
+     * @param resources the resources to use for feeding the tribe
      * @return true if the tribe was successfully fed
      */
     public boolean feedTribe(final Effect[] resources) {

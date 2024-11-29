@@ -27,8 +27,7 @@ public class ToolMakerHutsFields {
     }
 
     /**
-     * @param playerCount
-     *            needed for restrictions
+     * @param playerCount needed for restrictions
      */
     public ToolMakerHutsFields(final int playerCount) {
         toolMakerFigures = new ArrayList<>();
@@ -40,9 +39,7 @@ public class ToolMakerHutsFields {
     /**
      * resolve action place on toolmaker.
      *
-     * @param player
-     *            player to place
-     *
+     * @param player player to place
      * @return true if action can be completed
      */
     public boolean placeOnToolMaker(final Player player) {
@@ -56,23 +53,19 @@ public class ToolMakerHutsFields {
     /**
      * resolve action toolmaker.
      *
-     * @param player
-     *            player to give resource to
-     *
+     * @param player player to give resource to
      * @return true if action can be completed
      */
     public boolean actionToolMaker(final Player player) {
         if (!toolMakerFigures.getFirst().equals(player.playerOrder())) {
             return false;
         }
-        player.playerBoard().giveEffect(new Effect[] {Effect.TOOL});
+        player.playerBoard().giveEffect(new Effect[]{Effect.TOOL});
         return true;
     }
 
     /**
-     * @param player
-     *            irrelevant
-     *
+     * @param player irrelevant
      * @return true if figure can be placed on toolmaker
      */
     public boolean canPlaceOnToolMaker(final Player player) {
@@ -85,9 +78,7 @@ public class ToolMakerHutsFields {
     /**
      * resolve action place on hut.
      *
-     * @param player
-     *            player to place
-     *
+     * @param player player to place
      * @return true if action can be completed
      */
     public boolean placeOnHut(final Player player) {
@@ -102,9 +93,7 @@ public class ToolMakerHutsFields {
     /**
      * resolve action hut.
      *
-     * @param player
-     *            player to place
-     *
+     * @param player player to place
      * @return true if action can be completed
      */
     public boolean actionHut(final Player player) {
@@ -116,9 +105,7 @@ public class ToolMakerHutsFields {
     }
 
     /**
-     * @param player
-     *            irrelevant
-     *
+     * @param player irrelevant
      * @return true figure can be placed on hut
      */
     public boolean canPlaceOnHut(final Player player) {
@@ -131,9 +118,7 @@ public class ToolMakerHutsFields {
     /**
      * resolve action place on fields.
      *
-     * @param player
-     *            player to place
-     *
+     * @param player player to place
      * @return true if action can be completed
      */
     public boolean placeOnFields(final Player player) {
@@ -147,23 +132,19 @@ public class ToolMakerHutsFields {
     /**
      * resolve action fields.
      *
-     * @param player
-     *            player to give resource to
-     *
+     * @param player player to give resource to
      * @return true if action can be completed
      */
     public boolean actionFields(final Player player) {
         if (!fieldsFigures.getFirst().equals(player.playerOrder())) {
             return false;
         }
-        player.playerBoard().giveEffect(new Effect[] {Effect.FIELD});
+        player.playerBoard().giveEffect(new Effect[]{Effect.FIELD});
         return false;
     }
 
     /**
-     * @param player
-     *            irrelevant
-     *
+     * @param player irrelevant
      * @return true if figure can be placed on fields
      */
     public boolean canPlaceOnFields(final Player player) {

@@ -16,7 +16,7 @@ public class PlayerBoardIntegrationTest {
         PlayerBoard pb = tmp.getKey();
         PlayerBoardGameBoardFacade pbf = tmp.getValue();
 
-        Effect[] resources = new Effect[]{Effect.FOOD, Effect.WOOD, Effect.CLAY, Effect.STONE, Effect.GOLD};
+        Effect[] resources = new Effect[] { Effect.FOOD, Effect.WOOD, Effect.CLAY, Effect.STONE, Effect.GOLD };
         pbf.giveEffect(resources);
         assert pb.getPlayerResourcesAndFood().hasResources(resources);
 
@@ -27,13 +27,13 @@ public class PlayerBoardIntegrationTest {
         assert !pbf.feedTribe(List.of());
         assert pbf.doNotFeedThisTurn();
         assert pbf.feedTribe(List.of());
-        assert !pbf.takeResources(new Effect[]{Effect.FOOD});
+        assert !pbf.takeResources(new Effect[] { Effect.FOOD });
 
         int points = pb.addPoints(0);
         assert points == -10;
 
         pbf.newTurn();
-        pbf.giveEffect(new Effect[]{Effect.FOOD, Effect.FOOD, Effect.FOOD, Effect.STONE, Effect.GOLD});
+        pbf.giveEffect(new Effect[] { Effect.FOOD, Effect.FOOD, Effect.FOOD, Effect.STONE, Effect.GOLD });
         assert !pbf.hasFigures(6);
         assert !pbf.isTribeFed();
         assert !pbf.feedTribe(Arrays.asList(Effect.FOOD, Effect.FOOD, Effect.CLAY, Effect.STONE, Effect.GOLD));
@@ -41,8 +41,8 @@ public class PlayerBoardIntegrationTest {
 
         assert pbf.feedTribe(Arrays.asList(Effect.FOOD, Effect.FOOD, Effect.FOOD, Effect.STONE, Effect.GOLD));
         assert pb.getPlayerResourcesAndFood()
-                .hasResources(new Effect[]{Effect.WOOD, Effect.CLAY, Effect.STONE, Effect.GOLD});
-        assert !pb.getPlayerResourcesAndFood().hasResources(new Effect[]{Effect.FOOD});
+                .hasResources(new Effect[] { Effect.WOOD, Effect.CLAY, Effect.STONE, Effect.GOLD });
+        assert !pb.getPlayerResourcesAndFood().hasResources(new Effect[] { Effect.FOOD });
         assert pbf.isTribeFed();
 
         pbf.giveFigure();
@@ -55,14 +55,14 @@ public class PlayerBoardIntegrationTest {
         assert pbf.hasFigures(6);
         assert pbf.takeFigures(6);
 
-        pbf.giveEffect(new Effect[]{Effect.FOOD, Effect.FOOD, Effect.FOOD, Effect.FOOD, Effect.FOOD});
+        pbf.giveEffect(new Effect[] { Effect.FOOD, Effect.FOOD, Effect.FOOD, Effect.FOOD, Effect.FOOD });
         assert !pbf.feedTribeIfEnoughFood();
         assert !pbf.isTribeFed();
-        pbf.giveEffect(new Effect[]{Effect.FOOD});
+        pbf.giveEffect(new Effect[] { Effect.FOOD });
         assert pbf.feedTribeIfEnoughFood();
         assert pb.getPlayerResourcesAndFood()
-                .hasResources(new Effect[]{Effect.WOOD, Effect.CLAY, Effect.STONE, Effect.GOLD});
-        assert !pb.getPlayerResourcesAndFood().hasResources(new Effect[]{Effect.FOOD});
+                .hasResources(new Effect[] { Effect.WOOD, Effect.CLAY, Effect.STONE, Effect.GOLD });
+        assert !pb.getPlayerResourcesAndFood().hasResources(new Effect[] { Effect.FOOD });
 
         points = pb.addPoints(0);
         assert points == -10;
@@ -90,7 +90,7 @@ public class PlayerBoardIntegrationTest {
         assert pbf.takeFigures(5);
         assert !pbf.hasFigures(1);
 
-        pbf.giveEffect(new Effect[]{Effect.WOOD});
+        pbf.giveEffect(new Effect[] { Effect.WOOD });
         List<Effect> feed = Arrays.asList(Effect.FOOD, Effect.FOOD, Effect.FOOD, Effect.FOOD, Effect.WOOD);
         assert !pbf.feedTribe(feed);
         assert !pbf.isTribeFed();
@@ -117,9 +117,9 @@ public class PlayerBoardIntegrationTest {
         assert optInt.isEmpty();
         assert pbf.hasSufficientTools(1);
 
-        pbf.giveEndOfGameEffect(new EndOfGameEffect[]{EndOfGameEffect.WRITING, EndOfGameEffect.ART});
-        pbf.giveEndOfGameEffect(new EndOfGameEffect[]{EndOfGameEffect.TOOL_MAKER});
-        pbf.giveEndOfGameEffect(new EndOfGameEffect[]{EndOfGameEffect.SHAMAN, EndOfGameEffect.SHAMAN});
+        pbf.giveEndOfGameEffect(new EndOfGameEffect[] { EndOfGameEffect.WRITING, EndOfGameEffect.ART });
+        pbf.giveEndOfGameEffect(new EndOfGameEffect[] { EndOfGameEffect.TOOL_MAKER });
+        pbf.giveEndOfGameEffect(new EndOfGameEffect[] { EndOfGameEffect.SHAMAN, EndOfGameEffect.SHAMAN });
 
         pb.addEndOfGamePoints();
         points = pb.addPoints(0);
