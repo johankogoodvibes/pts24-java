@@ -156,7 +156,7 @@ public final class GamePhaseController implements InterfaceGamePhaseController {
                 progressStateAfterSuccessfulAction();
                 break;
             case NO_ACTION_POSSIBLE:
-                if (firstUnsuccessfulPlayer == null) {
+                if (firstUnsuccessfulPlayer == null || unsuccessfulGamePhase != gamePhase) {
                     firstUnsuccessfulPlayer = player;
                     unsuccessfulGamePhase = gamePhase;
                 }
